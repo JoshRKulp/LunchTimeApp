@@ -3,6 +3,7 @@ app.controller("SampleCtrl", function($scope, $firebase) {
   var ref = new Firebase("https://lunchtimeapp.firebaseio.com/messages");
   var sync = $firebase(ref);
   $scope.messages = sync.$asArray();
+  
   $scope.addMessage = function(text) {
     $scope.messages.$add({text: text});
   }
